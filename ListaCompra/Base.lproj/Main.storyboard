@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GDp-6M-8jx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de la compra-->
+        <scene sceneID="SiN-2Q-Cmf">
+            <objects>
+                <tableViewController id="GDp-6M-8jx" customClass="ListaViewController" customModule="ListaCompra" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nzN-mv-2Uv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Out-9d-Ic7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Lista de la compra" id="8ae-KE-du9">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Ce-8y-Rgx">
+                                        <connections>
+                                            <segue destination="KaZ-f8-9a9" kind="show" id="PkJ-f1-Fi1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MiCelda" textLabel="cAu-rs-1sz" style="IBUITableViewCellStyleDefault" id="Ytn-cv-xKK">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ytn-cv-xKK" id="rlz-Pn-WpH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cAu-rs-1sz">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GDp-6M-8jx" id="bww-4z-4nF"/>
+                            <outlet property="delegate" destination="GDp-6M-8jx" id="cRo-Yf-Umi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de la compra" id="8Sf-R5-RfE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGn-Cz-YeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92" y="34"/>
+        </scene>
+        <!--Nuevo Item View Controller-->
+        <scene sceneID="aP0-1i-kfR">
+            <objects>
+                <viewController id="KaZ-f8-9a9" customClass="NuevoItemViewController" customModule="ListaCompra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F5f-fH-IR6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="NFp-CB-Csa">
+                                <rect key="frame" x="27" y="195" width="320" height="276"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del item..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0i-hm-llf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVz-4z-ebK">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="216"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o2Q-dB-ULy">
+                                        <rect key="frame" x="0.0" y="246" width="320" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8s-a3-OPJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                <state key="normal" title="Cancelar"/>
+                                                <connections>
+                                                    <segue destination="0On-SP-zuY" kind="unwind" identifier="cancelar" unwindAction="unwindWithSegue:" id="4aO-na-AdH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81Q-Gm-3px">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="30"/>
+                                                <state key="normal" title="Guardar"/>
+                                                <connections>
+                                                    <action selector="tapGuardar:" destination="KaZ-f8-9a9" eventType="touchUpInside" id="MwM-jI-wJn"/>
+                                                    <segue destination="0On-SP-zuY" kind="unwind" identifier="guardar" unwindAction="unwindWithSegue:" id="vnN-UF-Voa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Whd-ac-RPY" firstAttribute="bottom" secondItem="NFp-CB-Csa" secondAttribute="bottom" constant="196" id="EpZ-bz-SVZ"/>
+                            <constraint firstItem="Whd-ac-RPY" firstAttribute="trailing" secondItem="NFp-CB-Csa" secondAttribute="trailing" constant="28" id="aBN-J5-iFe"/>
+                            <constraint firstItem="NFp-CB-Csa" firstAttribute="centerY" secondItem="F5f-fH-IR6" secondAttribute="centerY" id="cGG-Eb-fiX"/>
+                            <constraint firstItem="NFp-CB-Csa" firstAttribute="centerX" secondItem="F5f-fH-IR6" secondAttribute="centerX" id="ggh-uT-q7D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Whd-ac-RPY"/>
+                    </view>
+                    <connections>
+                        <outlet property="prioridadPicker" destination="mVz-4z-ebK" id="fpZ-pr-Ar9"/>
+                        <outlet property="textoNombre" destination="j0i-hm-llf" id="ogx-n3-JhV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ca0-RL-QKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0On-SP-zuY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="34"/>
+        </scene>
+    </scenes>
+</document>
