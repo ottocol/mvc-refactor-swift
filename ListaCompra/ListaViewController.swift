@@ -22,6 +22,13 @@ class ListaViewController: UITableViewController {
         return celda
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.listaItems.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
