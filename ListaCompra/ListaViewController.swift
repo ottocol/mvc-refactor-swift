@@ -31,7 +31,9 @@ class ListaViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let celda = tableView.cellForRow(at: indexPath) {
-            if celda.accessoryType == .none {
+            let pos = indexPath.row
+            listaItems[pos].comprado = !listaItems[pos].comprado
+            if listaItems[pos].comprado {
                 celda.accessoryType = .checkmark
             }
             else {
@@ -53,8 +55,8 @@ class ListaViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        listaItems.append(Item(nombre: "pan", prioridad: .urgente))
-        listaItems.append(Item(nombre: "langostinos", prioridad: .accesorio))
+        listaItems.append(Item(nombre: "pan", prioridad: .urgente, comprado: false))
+        listaItems.append(Item(nombre: "langostinos", prioridad: .accesorio, comprado: false))
     }
 
     override func didReceiveMemoryWarning() {

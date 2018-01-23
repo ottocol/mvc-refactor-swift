@@ -27,4 +27,5 @@ enum Prioridad : Int  {
 struct Item {
     var nombre : String
     var prioridad : Prioridad
+    var comprado : Bool
 }

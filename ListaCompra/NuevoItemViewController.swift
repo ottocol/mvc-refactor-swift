@@ -23,7 +23,7 @@ class NuevoItemViewController: UIViewController, UIPickerViewDataSource, UIPicke
             let nombre = self.textoNombre.text!
             let pickerRow = self.prioridadPicker.selectedRow(inComponent: 0)
             let prioridad = Prioridad(rawValue:pickerRow)!
-            nuevoItem = Item(nombre: nombre, prioridad: prioridad)
+            nuevoItem = Item(nombre: nombre, prioridad: prioridad, comprado: false)
         }
         return true
     }
