@@ -9,7 +9,7 @@
 import Foundation
 
 
-enum Prioridad : Int  {
+enum Prioridad : Int, Codable {
     case urgente = 0
     case necesario
     case accesorio
@@ -24,7 +24,7 @@ enum Prioridad : Int  {
     }
 }
 
-struct Item {
+struct Item : Codable {
     var nombre : String
     var prioridad : Prioridad
     var comprado : Bool

@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        guardarLista()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -39,6 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        guardarLista()
+    }
+    
+    func guardarLista() {
+        let urlDocs = FileManager.default.urls(for:.documentDirectory,
+                                               in:.userDomainMask)[0]
+        let urlArchivo = urlDocs.appendingPathComponent("items.plist")
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
+        let lista_vc = self.window?.rootViewController as! ListaViewController
+        do {
+           let data = try encoder.encode(lista_vc.listaItems)
+           try data.write(to: urlArchivo)
+        } catch {
+            print("Error grave: ¡¡No se ha podido guardar la lista!!")
+        }
     }
 
 

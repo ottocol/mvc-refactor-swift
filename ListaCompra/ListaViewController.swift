@@ -55,8 +55,7 @@ class ListaViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        listaItems.append(Item(nombre: "pan", prioridad: .urgente, comprado: false))
-        listaItems.append(Item(nombre: "langostinos", prioridad: .accesorio, comprado: false))
+        self.listaItems = leerLista()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +72,20 @@ class ListaViewController: UITableViewController {
             }
         }
     }
-
+    
+    func leerLista() -> [Item] {
+        let urlDocs = FileManager.default.urls(for:.documentDirectory,
+                                               in:.userDomainMask)[0]
+        let urlArchivo = urlDocs.appendingPathComponent("items.plist")
+        if let data = try? Data(contentsOf: urlArchivo) {
+            let decoder = PropertyListDecoder()
+            let lista = try! decoder.decode([Item].self, from: data)
+            return lista
+        }
+        else {
+            let lista : [Item] = []
+            return lista
+        }
+    }
 }
 
