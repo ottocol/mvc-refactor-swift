@@ -48,12 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func guardarLista() {
         let urlDocs = FileManager.default.urls(for:.documentDirectory,
                                                in:.userDomainMask)[0]
-        let urlArchivo = urlDocs.appendingPathComponent("items.plist")
+        let urlArchivo = urlDocs.appendingPathComponent("lista_compra.plist")
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         let lista_vc = self.window?.rootViewController as! ListaViewController
         do {
-           let data = try encoder.encode(lista_vc.listaItems)
+           let data = try encoder.encode(lista_vc.lista)
            try data.write(to: urlArchivo)
         } catch {
             print("Error grave: ¡¡No se ha podido guardar la lista!!")

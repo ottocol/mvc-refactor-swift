@@ -9,41 +9,46 @@
 import UIKit
 
 class ListaViewController: UITableViewController {
-    var listaItems : [[Item]] = [[],[],[]]
+    var lista = ListaCompra()
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaItems[section].count
+        if let prioridad = Prioridad(rawValue: section) {
+           return lista.contarItems(prioridad: prioridad)
+        }
+        else {
+           return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "MiCelda", for: indexPath)
-        let seccion = listaItems[indexPath.section]
-        let item = seccion[indexPath.row]
-        celda.textLabel?.text = item.nombre
-        if item.comprado {
-            celda.accessoryType = .checkmark
-        }
-        else {
-            celda.accessoryType = .none
+        if let prioridad = Prioridad(rawValue: indexPath.section),
+            let item = lista.getItem(pos: indexPath.row, prioridad: prioridad) {
+            celda.textLabel?.text = item.nombre
+            if item.comprado {
+                celda.accessoryType = .checkmark
+            }
+            else {
+                celda.accessoryType = .none
+            }
         }
         return celda
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.listaItems[indexPath.section].remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if let prioridad = Prioridad(rawValue:indexPath.section) {
+               self.lista.deleteItem(pos: indexPath.row, prioridad: prioridad)
+               tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let celda = tableView.cellForRow(at: indexPath) {
-            listaItems[indexPath.section][indexPath.row].comprado = !listaItems[indexPath.section][indexPath.row].comprado
-            if listaItems[indexPath.section][indexPath.row].comprado {
-                celda.accessoryType = .checkmark
-            }
-            else {
-                celda.accessoryType = .none
+        if let celda = tableView.cellForRow(at: indexPath),
+           let prioridad = Prioridad(rawValue:indexPath.section) {
+            if let estado = lista.switchItemStatus(pos: indexPath.row, prioridad: prioridad) {
+                celda.accessoryType = estado ? .checkmark : .none
             }
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -61,7 +66,7 @@ class ListaViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.listaItems = leerLista()
+        lista = leerLista()
         print("Lista leida...\(Date())")
     }
 
@@ -74,24 +79,23 @@ class ListaViewController: UITableViewController {
         if segue.identifier! == "guardar" {
             let vc = segue.source as! NuevoItemViewController
             if let nuevoItem = vc.nuevoItem {
-                listaItems[nuevoItem.prioridad.rawValue].append(nuevoItem)
-                self.tableView?.reloadData()
+               lista.addItem(nuevoItem)
+               self.tableView?.reloadData()
             }
         }
     }
     
-    func leerLista() -> [[Item]] {
+    func leerLista() -> ListaCompra {
         let urlDocs = FileManager.default.urls(for:.documentDirectory,
                                                in:.userDomainMask)[0]
-        let urlArchivo = urlDocs.appendingPathComponent("items.plist")
+        let urlArchivo = urlDocs.appendingPathComponent("lista_compra.plist")
         if let data = try? Data(contentsOf: urlArchivo) {
             let decoder = PropertyListDecoder()
-            let lista = try! decoder.decode([[Item]].self, from: data)
+            let lista = try! decoder.decode(ListaCompra.self, from: data)
             return lista
         }
         else {
-            let lista : [[Item]] = [[],[],[]]
-            return lista
+            return ListaCompra()
         }
     }
 }

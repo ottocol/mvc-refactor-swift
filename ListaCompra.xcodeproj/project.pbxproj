@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27511B892018A76600B05685 /* ListaCompra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B882018A76600B05685 /* ListaCompra.swift */; };
+		27511B912018D6A100B05685 /* ListaCompraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B902018D6A100B05685 /* ListaCompraTests.swift */; };
 		27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF189F2014D7D700AB465E /* AppDelegate.swift */; };
 		27DF18A22014D7D700AB465E /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF18A12014D7D700AB465E /* ListaViewController.swift */; };
 		27DF18A52014D7D700AB465E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF18A32014D7D700AB465E /* Main.storyboard */; };
@@ -16,7 +18,21 @@
 		27DF18B62014F8E200AB465E /* NuevoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF18B52014F8E200AB465E /* NuevoItemViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		27511B932018D6A100B05685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27DF18942014D7D700AB465E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27DF189B2014D7D700AB465E;
+			remoteInfo = ListaCompra;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		27511B882018A76600B05685 /* ListaCompra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCompra.swift; sourceTree = "<group>"; };
+		27511B8E2018D6A100B05685 /* ListaCompraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListaCompraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27511B902018D6A100B05685 /* ListaCompraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCompraTests.swift; sourceTree = "<group>"; };
+		27511B922018D6A100B05685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DF189C2014D7D700AB465E /* ListaCompra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaCompra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF189F2014D7D700AB465E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF18A12014D7D700AB465E /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		27511B8B2018D6A100B05685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27DF18992014D7D700AB465E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +62,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27511B872018A73700B05685 /* modelo */ = {
+			isa = PBXGroup;
+			children = (
+				27511B882018A76600B05685 /* ListaCompra.swift */,
+			);
+			path = modelo;
+			sourceTree = "<group>";
+		};
+		27511B8F2018D6A100B05685 /* ListaCompraTests */ = {
+			isa = PBXGroup;
+			children = (
+				27511B902018D6A100B05685 /* ListaCompraTests.swift */,
+				27511B922018D6A100B05685 /* Info.plist */,
+			);
+			path = ListaCompraTests;
+			sourceTree = "<group>";
+		};
 		27DF18932014D7D700AB465E = {
 			isa = PBXGroup;
 			children = (
 				27DF189E2014D7D700AB465E /* ListaCompra */,
+				27511B8F2018D6A100B05685 /* ListaCompraTests */,
 				27DF189D2014D7D700AB465E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				27DF189C2014D7D700AB465E /* ListaCompra.app */,
+				27511B8E2018D6A100B05685 /* ListaCompraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +100,7 @@
 		27DF189E2014D7D700AB465E /* ListaCompra */ = {
 			isa = PBXGroup;
 			children = (
+				27511B872018A73700B05685 /* modelo */,
 				27DF189F2014D7D700AB465E /* AppDelegate.swift */,
 				27DF18A12014D7D700AB465E /* ListaViewController.swift */,
 				27DF18A32014D7D700AB465E /* Main.storyboard */,
@@ -73,6 +116,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		27511B8D2018D6A100B05685 /* ListaCompraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27511B952018D6A100B05685 /* Build configuration list for PBXNativeTarget "ListaCompraTests" */;
+			buildPhases = (
+				27511B8A2018D6A100B05685 /* Sources */,
+				27511B8B2018D6A100B05685 /* Frameworks */,
+				27511B8C2018D6A100B05685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27511B942018D6A100B05685 /* PBXTargetDependency */,
+			);
+			name = ListaCompraTests;
+			productName = ListaCompraTests;
+			productReference = 27511B8E2018D6A100B05685 /* ListaCompraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27DF189B2014D7D700AB465E /* ListaCompra */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27DF18AE2014D7D700AB465E /* Build configuration list for PBXNativeTarget "ListaCompra" */;
@@ -100,6 +161,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Universidad de Alicante";
 				TargetAttributes = {
+					27511B8D2018D6A100B05685 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 27DF189B2014D7D700AB465E;
+					};
 					27DF189B2014D7D700AB465E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -120,11 +186,19 @@
 			projectRoot = "";
 			targets = (
 				27DF189B2014D7D700AB465E /* ListaCompra */,
+				27511B8D2018D6A100B05685 /* ListaCompraTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27511B8C2018D6A100B05685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27DF189A2014D7D700AB465E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,11 +212,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27511B8A2018D6A100B05685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27511B912018D6A100B05685 /* ListaCompraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27DF18982014D7D700AB465E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				27DF18A22014D7D700AB465E /* ListaViewController.swift in Sources */,
+				27511B892018A76600B05685 /* ListaCompra.swift in Sources */,
 				27DF18B22014D8AC00AB465E /* Item.swift in Sources */,
 				27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */,
 				27DF18B62014F8E200AB465E /* NuevoItemViewController.swift in Sources */,
@@ -150,6 +233,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27511B942018D6A100B05685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27DF189B2014D7D700AB465E /* ListaCompra */;
+			targetProxy = 27511B932018D6A100B05685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		27DF18A32014D7D700AB465E /* Main.storyboard */ = {
@@ -171,6 +262,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		27511B962018D6A100B05685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S952AGH46;
+				INFOPLIST_FILE = ListaCompraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UA.ListaCompraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListaCompra.app/ListaCompra";
+			};
+			name = Debug;
+		};
+		27511B972018D6A100B05685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3S952AGH46;
+				INFOPLIST_FILE = ListaCompraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UA.ListaCompraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ListaCompra.app/ListaCompra";
+			};
+			name = Release;
+		};
 		27DF18AC2014D7D700AB465E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -311,6 +434,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27511B952018D6A100B05685 /* Build configuration list for PBXNativeTarget "ListaCompraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27511B962018D6A100B05685 /* Debug */,
+				27511B972018D6A100B05685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27DF18972014D7D700AB465E /* Build configuration list for PBXProject "ListaCompra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
