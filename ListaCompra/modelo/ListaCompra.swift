@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ListaCompra : Codable {
+class ListaCompra : Codable  {
     var listaItems : [[Item]] = [[],[],[]]
     
     func addItem(_ item: Item) {

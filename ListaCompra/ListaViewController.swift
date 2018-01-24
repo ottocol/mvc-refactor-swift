@@ -10,39 +10,9 @@ import UIKit
 
 class ListaViewController: UITableViewController {
     var lista = ListaCompra()
+    var listaDataSource = ListaCompraDataSource()
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let prioridad = Prioridad(rawValue: section) {
-           return lista.contarItems(prioridad: prioridad)
-        }
-        else {
-           return 0
-        }
-    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "MiCelda", for: indexPath)
-        if let prioridad = Prioridad(rawValue: indexPath.section),
-            let item = lista.getItem(pos: indexPath.row, prioridad: prioridad) {
-            celda.textLabel?.text = item.nombre
-            if item.comprado {
-                celda.accessoryType = .checkmark
-            }
-            else {
-                celda.accessoryType = .none
-            }
-        }
-        return celda
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if let prioridad = Prioridad(rawValue:indexPath.section) {
-               self.lista.deleteItem(pos: indexPath.row, prioridad: prioridad)
-               tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let celda = tableView.cellForRow(at: indexPath),
@@ -54,13 +24,7 @@ class ListaViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return Prioridad(rawValue:section)?.titulo
-    }
     
 
     override func viewDidLoad() {
@@ -68,6 +32,8 @@ class ListaViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         lista = RepositorioLista().leerLista()
         print("Lista leida...\(Date())")
+        listaDataSource.setLista(lista)
+        self.tableView.dataSource = listaDataSource
     }
 
     override func didReceiveMemoryWarning() {
