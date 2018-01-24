@@ -35,6 +35,7 @@ class ListaCompraTests: XCTestCase {
         XCTAssertEqual(lista.contarItems(prioridad: .necesario), 1)
         let item = lista.getItem(pos: 0, prioridad: .necesario)
         XCTAssertEqual(item?.nombre,"prueba")
+        
     }
     
     

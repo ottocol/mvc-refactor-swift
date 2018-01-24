@@ -66,7 +66,7 @@ class ListaViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lista = leerLista()
+        lista = RepositorioLista().leerLista()
         print("Lista leida...\(Date())")
     }
 
@@ -82,20 +82,6 @@ class ListaViewController: UITableViewController {
                lista.addItem(nuevoItem)
                self.tableView?.reloadData()
             }
-        }
-    }
-    
-    func leerLista() -> ListaCompra {
-        let urlDocs = FileManager.default.urls(for:.documentDirectory,
-                                               in:.userDomainMask)[0]
-        let urlArchivo = urlDocs.appendingPathComponent("lista_compra.plist")
-        if let data = try? Data(contentsOf: urlArchivo) {
-            let decoder = PropertyListDecoder()
-            let lista = try! decoder.decode(ListaCompra.self, from: data)
-            return lista
-        }
-        else {
-            return ListaCompra()
         }
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27511B892018A76600B05685 /* ListaCompra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B882018A76600B05685 /* ListaCompra.swift */; };
 		27511B912018D6A100B05685 /* ListaCompraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B902018D6A100B05685 /* ListaCompraTests.swift */; };
+		27511B9A20193A1400B05685 /* RepositorioLista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B9920193A1400B05685 /* RepositorioLista.swift */; };
+		27511B9C20193D2000B05685 /* RepositorioListaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511B9B20193D2000B05685 /* RepositorioListaTests.swift */; };
 		27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF189F2014D7D700AB465E /* AppDelegate.swift */; };
 		27DF18A22014D7D700AB465E /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF18A12014D7D700AB465E /* ListaViewController.swift */; };
 		27DF18A52014D7D700AB465E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF18A32014D7D700AB465E /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		27511B8E2018D6A100B05685 /* ListaCompraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListaCompraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27511B902018D6A100B05685 /* ListaCompraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCompraTests.swift; sourceTree = "<group>"; };
 		27511B922018D6A100B05685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27511B9920193A1400B05685 /* RepositorioLista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorioLista.swift; sourceTree = "<group>"; };
+		27511B9B20193D2000B05685 /* RepositorioListaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorioListaTests.swift; sourceTree = "<group>"; };
 		27DF189C2014D7D700AB465E /* ListaCompra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaCompra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF189F2014D7D700AB465E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF18A12014D7D700AB465E /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +79,17 @@
 			children = (
 				27511B902018D6A100B05685 /* ListaCompraTests.swift */,
 				27511B922018D6A100B05685 /* Info.plist */,
+				27511B9B20193D2000B05685 /* RepositorioListaTests.swift */,
 			);
 			path = ListaCompraTests;
+			sourceTree = "<group>";
+		};
+		27511B98201939FC00B05685 /* datos */ = {
+			isa = PBXGroup;
+			children = (
+				27511B9920193A1400B05685 /* RepositorioLista.swift */,
+			);
+			path = datos;
 			sourceTree = "<group>";
 		};
 		27DF18932014D7D700AB465E = {
@@ -100,6 +113,7 @@
 		27DF189E2014D7D700AB465E /* ListaCompra */ = {
 			isa = PBXGroup;
 			children = (
+				27511B98201939FC00B05685 /* datos */,
 				27511B872018A73700B05685 /* modelo */,
 				27DF189F2014D7D700AB465E /* AppDelegate.swift */,
 				27DF18A12014D7D700AB465E /* ListaViewController.swift */,
@@ -217,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27511B912018D6A100B05685 /* ListaCompraTests.swift in Sources */,
+				27511B9C20193D2000B05685 /* RepositorioListaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 				27DF18A22014D7D700AB465E /* ListaViewController.swift in Sources */,
 				27511B892018A76600B05685 /* ListaCompra.swift in Sources */,
 				27DF18B22014D8AC00AB465E /* Item.swift in Sources */,
+				27511B9A20193A1400B05685 /* RepositorioLista.swift in Sources */,
 				27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */,
 				27DF18B62014F8E200AB465E /* NuevoItemViewController.swift in Sources */,
 			);
