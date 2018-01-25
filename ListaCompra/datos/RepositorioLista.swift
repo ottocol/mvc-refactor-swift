@@ -9,7 +9,7 @@
 import Foundation
 
 
-class RepositorioLista {
+class RepositorioLista : RepositorioListaProtocol {
     var nombre_fichero = "lista_compra.plist"
     
     func leerLista() -> ListaCompra {

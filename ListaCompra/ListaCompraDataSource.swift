@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ListaCompraDataSource : NSObject, UITableViewDataSource {
-    var lista : ListaCompra!
+    var lista : ListaCompraProtocol!
     
     func setLista(_ lista : ListaCompra) {
         self.lista = lista
