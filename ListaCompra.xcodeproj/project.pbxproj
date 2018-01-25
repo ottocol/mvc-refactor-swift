@@ -14,6 +14,7 @@
 		27511BA220194B4100B05685 /* ListaCompraDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511BA120194B4100B05685 /* ListaCompraDataSource.swift */; };
 		27511BA42019558C00B05685 /* RepositorioListaProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511BA32019558B00B05685 /* RepositorioListaProtocol.swift */; };
 		27511BA62019559700B05685 /* ListaCompraProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511BA52019559700B05685 /* ListaCompraProtocol.swift */; };
+		27511BA92019575C00B05685 /* CeldaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27511BA82019575C00B05685 /* CeldaItem.swift */; };
 		27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF189F2014D7D700AB465E /* AppDelegate.swift */; };
 		27DF18A22014D7D700AB465E /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF18A12014D7D700AB465E /* ListaViewController.swift */; };
 		27DF18A52014D7D700AB465E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF18A32014D7D700AB465E /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		27511BA120194B4100B05685 /* ListaCompraDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCompraDataSource.swift; sourceTree = "<group>"; };
 		27511BA32019558B00B05685 /* RepositorioListaProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorioListaProtocol.swift; sourceTree = "<group>"; };
 		27511BA52019559700B05685 /* ListaCompraProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaCompraProtocol.swift; sourceTree = "<group>"; };
+		27511BA82019575C00B05685 /* CeldaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaItem.swift; sourceTree = "<group>"; };
 		27DF189C2014D7D700AB465E /* ListaCompra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaCompra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF189F2014D7D700AB465E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF18A12014D7D700AB465E /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			path = datos;
 			sourceTree = "<group>";
 		};
+		27511BA72019573600B05685 /* vista */ = {
+			isa = PBXGroup;
+			children = (
+				27511BA82019575C00B05685 /* CeldaItem.swift */,
+			);
+			path = vista;
+			sourceTree = "<group>";
+		};
 		27DF18932014D7D700AB465E = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		27DF189E2014D7D700AB465E /* ListaCompra */ = {
 			isa = PBXGroup;
 			children = (
+				27511BA72019573600B05685 /* vista */,
 				27511B98201939FC00B05685 /* datos */,
 				27511B872018A73700B05685 /* modelo */,
 				27DF189F2014D7D700AB465E /* AppDelegate.swift */,
@@ -254,6 +265,7 @@
 				27511BA220194B4100B05685 /* ListaCompraDataSource.swift in Sources */,
 				27DF18B22014D8AC00AB465E /* Item.swift in Sources */,
 				27511B9A20193A1400B05685 /* RepositorioLista.swift in Sources */,
+				27511BA92019575C00B05685 /* CeldaItem.swift in Sources */,
 				27DF18A02014D7D700AB465E /* AppDelegate.swift in Sources */,
 				27DF18B62014F8E200AB465E /* NuevoItemViewController.swift in Sources */,
 				27511BA42019558C00B05685 /* RepositorioListaProtocol.swift in Sources */,

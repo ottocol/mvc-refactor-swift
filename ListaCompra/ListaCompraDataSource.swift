@@ -26,16 +26,13 @@ class ListaCompraDataSource : NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "MiCelda", for: indexPath)
+        let celda = tableView.dequeueReusableCell(withIdentifier: CeldaItem.nombre, for: indexPath)
         if let prioridad = Prioridad(rawValue: indexPath.section),
             let item = lista.getItem(pos: indexPath.row, prioridad: prioridad) {
-            celda.textLabel?.text = item.nombre
-            if item.comprado {
-                celda.accessoryType = .checkmark
-            }
-            else {
-                celda.accessoryType = .none
-            }
+            let celdaItem = celda as! CeldaItem
+                celdaItem.nombre = item.nombre
+                celdaItem.comprado = item.comprado
+                return celdaItem
         }
         return celda
     }

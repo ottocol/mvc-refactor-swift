@@ -32,7 +32,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MiCelda" textLabel="cAu-rs-1sz" style="IBUITableViewCellStyleDefault" id="Ytn-cv-xKK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MiCelda" textLabel="cAu-rs-1sz" style="IBUITableViewCellStyleDefault" id="Ytn-cv-xKK" customClass="CeldaItem" customModule="ListaCompra" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ytn-cv-xKK" id="rlz-Pn-WpH">
