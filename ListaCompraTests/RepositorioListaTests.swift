@@ -22,7 +22,7 @@ class RepositorioListaTests: XCTestCase {
     }
     
     func testRepositorioOK() {
-        var lista = ListaCompra()
+        let lista = ListaCompra()
         lista.addItem(Item(nombre: "test", prioridad: .urgente, comprado: false))
         lista.addItem(Item(nombre: "test2", prioridad: .accesorio, comprado: true))
  

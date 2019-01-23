@@ -37,7 +37,7 @@ class ListaCompraDataSource : NSObject, UITableViewDataSource {
         return celda
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let prioridad = Prioridad(rawValue:indexPath.section) {
                 self.lista.deleteItem(pos: indexPath.row, prioridad: prioridad)
