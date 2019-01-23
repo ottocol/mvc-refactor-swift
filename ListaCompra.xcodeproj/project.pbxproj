@@ -77,6 +77,7 @@
 		27511B872018A73700B05685 /* modelo */ = {
 			isa = PBXGroup;
 			children = (
+				27DF18B12014D8AC00AB465E /* Item.swift */,
 				27511B882018A76600B05685 /* ListaCompra.swift */,
 				27511BA52019559700B05685 /* ListaCompraProtocol.swift */,
 			);
@@ -140,7 +141,6 @@
 				27DF18A62014D7D700AB465E /* Assets.xcassets */,
 				27DF18A82014D7D700AB465E /* LaunchScreen.storyboard */,
 				27DF18AB2014D7D700AB465E /* Info.plist */,
-				27DF18B12014D8AC00AB465E /* Item.swift */,
 				27DF18B52014F8E200AB465E /* NuevoItemViewController.swift */,
 				27511BA120194B4100B05685 /* ListaCompraDataSource.swift */,
 			);
