@@ -11,18 +11,7 @@ import UIKit
 class ListaViewController: UITableViewController {
     var lista = ListaCompra()
     var listaDataSource = ListaCompraDataSource()
-
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let celda = tableView.cellForRow(at: indexPath),
-           let prioridad = Prioridad(rawValue:indexPath.section) {
-            if let estado = lista.switchItemStatus(pos: indexPath.row, prioridad: prioridad) {
-                celda.accessoryType = estado ? .checkmark : .none
-            }
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    var listaDelegate = ListaCompraDelegate()
     
     
     
@@ -33,7 +22,9 @@ class ListaViewController: UITableViewController {
         lista = RepositorioLista().leerLista()
         print("Lista leida...\(Date())")
         listaDataSource.setLista(lista)
+        listaDelegate.setLista(lista)
         self.tableView.dataSource = listaDataSource
+        self.tableView.delegate = listaDelegate
     }
 
     override func didReceiveMemoryWarning() {
